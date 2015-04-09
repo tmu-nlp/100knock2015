@@ -1,3 +1,3 @@
 if __name__=='__main__':
-    s = "stressed"
-    print s[::-1]
+    tok = "stressed"
+    print tok[::-1]
