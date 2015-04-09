@@ -1,4 +1,4 @@
 # coding:utf-8
 if __name__=='__main__':
-    s = u'パタトクカシーー'
-    print "".join([s[1], s[3], s[5], s[7]])
+    tok = u'パタトクカシーー'
+    print "".join([tok[1], tok[3], tok[5], tok[7]])
