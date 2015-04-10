@@ -1,16 +1,17 @@
 package knock_2015java;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Main {
 
 	public static void main(String[] args) {
-		Knock k000 = new Knock000();
-		Knock k001 = new Knock001();
-		Knock k002 = new Knock002();
+		ArrayList<Knock> knock_list = new ArrayList<Knock>();
+		knock_list.add(new Knock000());
+		knock_list.add(new Knock001());
+		knock_list.add(new Knock002());
 		
-		
-		//k000.start();
-		//k001.start();
-		k002.start();
+		knock_list.get(2).start();
 	}
 
 }
