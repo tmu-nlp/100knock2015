@@ -8,6 +8,7 @@ public class Knock000 extends Knock{
 		sb = new StringBuffer(tok);
 	}
 	
+	@Override
 	public void start(){
 		System.out.println(sb.reverse().toString());
 	}
