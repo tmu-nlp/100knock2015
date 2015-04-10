@@ -1,1 +1,7 @@
 *.pyc
+java/.metadata/
+java/RemoteSystemsTempFiles/
+java/knock_2015java/.classpath
+java/knock_2015java/.gitignore
+java/knock_2015java/.project
+java/knock_2015java/.settings/
