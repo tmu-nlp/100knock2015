@@ -45,21 +45,21 @@ public class Knock005 extends Knock {
 	public void start() {
 		System.out.println("word bigram");
 		for(Bigram b : getWordBigram(sent)){
-			System.out.println(b.getFirst()+" "+b.getSecond());
+			System.out.println(b.getFirst()+","+b.getSecond());
 		}
 		System.out.println();
 		for(Bigram b : getWordBigram(sent2)){
-			System.out.println(b.getFirst()+" "+b.getSecond());
+			System.out.println(b.getFirst()+","+b.getSecond());
 		}
 		
 		System.out.println();
 		System.out.println("character bigram");
 		for(Bigram b : getCharBigram(sent)){
-			System.out.println(b.getFirst()+" "+b.getSecond());
+			System.out.println(b.getFirst()+","+b.getSecond());
 		}
 		System.out.println();
 		for(Bigram b : getCharBigram(sent2)){
-			System.out.println(b.getFirst()+" "+b.getSecond());
+			System.out.println(b.getFirst()+","+b.getSecond());
 		}
 	}
 
