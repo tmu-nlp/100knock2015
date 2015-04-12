@@ -14,8 +14,9 @@ public class Main {
 		knock_list.add(new Knock005());
 		knock_list.add(new Knock006());
 		knock_list.add(new Knock007());
+		knock_list.add(new Knock008());
 		
-		knock_list.get(7).start();
+		knock_list.get(8).start();
 	}
 
 }
