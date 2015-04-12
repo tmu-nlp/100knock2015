@@ -1,6 +1,5 @@
 package knock_2015java;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Main {
@@ -10,8 +9,11 @@ public class Main {
 		knock_list.add(new Knock000());
 		knock_list.add(new Knock001());
 		knock_list.add(new Knock002());
+		knock_list.add(new Knock003());
+		knock_list.add(new Knock004());
+		knock_list.add(new Knock005());
 		
-		knock_list.get(2).start();
+		knock_list.get(5).start();
 	}
 
 }
