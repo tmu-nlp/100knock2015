@@ -1,4 +1,6 @@
 *.pyc
+Data/*
+
 java/.metadata/
 java/RemoteSystemsTempFiles/
 java/knock_2015java/.classpath
