@@ -1,3 +1,7 @@
+'''
+python knoack010.py ../Data/hightemp.txt
+'''
+
 import sys
 
 if __name__ == '__main__':
