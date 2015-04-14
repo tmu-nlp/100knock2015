@@ -11,7 +11,7 @@ re_end_info = re.compile('\}\}')
 re_template = re.compile('\|(.+?) = (.+)')
 re_ref = re.compile('(.*)(<ref>.*|<ref .*)')
 re_impact = re.compile('\'\'+')
-re_link = re.compile('\[\[(([^\|]*?\|)|([^\|]*?))([^\|]*?)\]\]')
+re_link = re.compile('\[\[(([^\|\]]*?\|)|([^\|\]]*?))([^\|\]]*?)\]\]')
 
 
 info = dict()
