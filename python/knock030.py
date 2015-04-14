@@ -38,7 +38,7 @@ for line in open(sys.argv[1]):
 
 # オブジェクトをそのまま（シリアライズして）出力
 pickle.dump(doc, open(sys.argv[2], 'w'))
-#for sents in doc:
-#    for m in sents:
+#for sent in doc:
+#    for m in sent:
 #        print '%s, %s, %s, %s' % (m['surface'], m['base'], m['pos'], m['pos1'])
 
