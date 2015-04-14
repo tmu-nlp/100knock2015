@@ -1,6 +1,6 @@
 #coding:utf-8
 '''
-python knock027.py ../Data/knock020/result
+python knock028.py ../Data/knock020/result
 '''
 
 import sys
