@@ -7,7 +7,7 @@ public class Knock001 extends Knock {
 	}
 	@Override
 	public void start() {
-		System.out.printf("%c%c%c%c\n", tok.charAt(1), tok.charAt(3), tok.charAt(5), tok.charAt(7));
+		System.out.printf("%c%c%c%c\n", tok.charAt(0), tok.charAt(2), tok.charAt(4), tok.charAt(6));
 	}
 
 }
