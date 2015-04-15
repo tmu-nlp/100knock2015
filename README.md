@@ -16,3 +16,37 @@ http://cl.sd.tmu.ac.jp/groups/programming-drill
 ##他のリポジトリで管理している人
 * [叶内　晨](https://github.com/shin-kanouchi/NLP100knock2015)
 * [張 培楠](https://github.com/peinan/NLP100DrillExercises2015)
+
+## コマンド説明
+必要になりそうなコマンドをここに説明しておきます。  
+
+#### ブランチ関連
+今自分がいるブランチがどこなのか意識してください。  
+**masterブランチにいたら絶対にコミットしないで！！**  
+
+
+ブランチ一覧  
+\*のマークが付いているブランチが現在自分がいるブランチ  
+`git branch -a`    
+
+testブランチの作成  
+`git branch test`  
+testブランチへの切り替え   
+`git checkout test`  
+現在のブランチへtestブランチをマージ  
+`git merge test`  
+
+
+#### ローカルのリポジトリに変更を更新する
+`git add knock000.py`  
+`git commit -m "message"`  
+knock000.pyのところは更新したファイルの名前  
+"message"はどんな変更を加えたのか1行くらいで書いてください。  
+
+
+#### リモート(つまりGitHub)にローカルの最新状況を更新する
+`git push`  
+もしなにかエラーがあったりしたら（エラーの文は一応読んでね）、恐らくリモートの方がローカルよりも最新だよってエラーだと思うので  
+`git pull`  
+これでリモートの最新状況をローカルに更新する、そしたらもう一度push  
+  
