@@ -20,7 +20,7 @@ http://cl.sd.tmu.ac.jp/groups/programming-drill
 ## コマンド説明
 必要になりそうなコマンドをここに説明しておきます。  
 
-#### ブランチ関連
+### ブランチ関連
 今自分がいるブランチがどこなのか意識してください。  
 **masterブランチにいたら絶対にコミットしないで！！**  
 
@@ -28,23 +28,32 @@ http://cl.sd.tmu.ac.jp/groups/programming-drill
 ブランチ一覧  
 \*のマークが付いているブランチが現在自分がいるブランチ  
 `git branch -a`    
-
+追跡ブランチの表示  
+`git branch -vv`  
 testブランチの作成  
 `git branch test`  
 testブランチへの切り替え   
 `git checkout test`  
 現在のブランチへtestブランチをマージ  
-`git merge test`  
+`git merge --no-ff test`  
 
 
-#### ローカルのリポジトリに変更を更新する
-`git add knock000.py`  
-`git commit -m "message"`  
-knock000.pyのところは更新したファイルの名前  
-"message"はどんな変更を加えたのか1行くらいで書いてください。  
+
+### ローカルのリポジトリに変更を更新する
+`git add <file_name>`  
+`git commit -m "<message>"`  
 
 
-#### リモート(つまりGitHub)にローカルの最新状況を更新する
+### リモート(つまりGitHub)にローカルの最新状況を更新する
+リモートの設定  
+`git remote add origin git@github.com:<name>/<repository>.git`  
+リモートの確認  
+とりあえず origin が表示されてればおｋ、されてなければ上のリモートの設定をする
+`git remote`  
+ローカルのブランチを新しくpush（追跡ブランチの設定をしつつ）  
+`git push -u origin <branch_name>`  
+
+追跡ブランチの設定が終わってる場合のpush  
 `git push`  
 もしなにかエラーがあったりしたら（エラーの文は一応読んでね）、恐らくリモートの方がローカルよりも最新だよってエラーだと思うので  
 `git pull`  
