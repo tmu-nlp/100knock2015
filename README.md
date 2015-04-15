@@ -12,3 +12,6 @@ http://cl.sd.tmu.ac.jp/groups/programming-drill
 各人自分のディレクトリを作ってその中にコミットしてください。  
 課題に必要なデータはコミットしなくてよいです。  
 基本的に各人自分のブランチを作って作業をして、各章の課題をコミットし終えたらdevelopブランチにマージしてください。勉強会の直前にTAがmasterにマージします。  
+
+##他のリポジトリで管理している人
+* [叶内　晨](https://github.com/shin-kanouchi/NLP100knock2015)
