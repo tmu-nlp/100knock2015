@@ -1,5 +1,6 @@
 # coding:utf-8
 
+
 def main(sentence):
     print sentence[::-1]
 
