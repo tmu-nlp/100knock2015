@@ -25,6 +25,8 @@ gitって何？？？？→[Git使い方講座][]
 ## コマンド説明
 必要になりそうなコマンドをここに説明しておきます。  
 <>で囲ってる部分は適宜適当な名前にしてください。(<>自体の入力は不要です。例：`<name_Nset>` -> `ryosuke_1set`)  
+
+
 今自分がいるブランチがどこなのか意識してください。  
 **masterブランチにいたら絶対にコミットしないで！！**  
 
@@ -34,7 +36,7 @@ gitって何？？？？→[Git使い方講座][]
 ローカルのdevelopブランチを最新状態に更新  
 現在のブランチがdevelopであることを確認しつつ  
 `git fetch`  
-`git merge origin/develop`
+`git merge origin/develop`  
 developブランチから新しく自分のブランチに分岐（ブランチを切る）  
 `git branch <name_Nset>`  
 今作ったブランチに移動  
@@ -46,22 +48,23 @@ developブランチから新しく自分のブランチに分岐（ブランチ�
 自分のブランチにいることを確認しつつ、コードカキカキ  
 コード書いたら、リポジトリに変更履歴を保存  
 `git add <file_name>`  
-`git commit -m "message"`  
+`git commit -m "<message>"`  
 リモートにも反映  
 `git push`  
 
 #### 章の終わり
-developブランチにマージしたいけど、その前にローカルのdevelopブランチを最新状態に更新  
+ローカルのdevelopブランチを最新状態に更新  
 developブランチにいることを確認しつつ  
 `git fetch`  
 `git merge origin/develop`  
 developブランチにさっきまで作業してた自分のブランチをマージ  
-`git merge <name_Nset>`  
+`git merge --no-ff <name_Nset>`  
+なんかvimの画面がでてくるけど`:wq`で終了（マージするときのコミットメーセージを入力する画面です）  
 リモートにも反映  
 `git push`  
 次の勉強会開始まで待機  
 勉強会終わったら章の初めから繰り返し  
-
+<br>
 
 ##### ちなみに
 いらなくなった過去のブランチは消せます  
@@ -69,11 +72,12 @@ developブランチにさっきまで作業してた自分のブランチをマ�
 章終わり or 章始めに 古い自分のブランチを削除しちゃっておｋです  
 ローカルのブランチの削除  
 `git branch -d <name_Nset>`  
-リモートのブランチも削除**自分以外のは勝手に消さないでね！**  
+リモートのブランチも削除（**自分以外のは勝手に消さないでね！**  ）
 `git push origin :<name_Nset>`
   
   
-### ブランチ関連
+### その他使いそうなコマンド一覧
+#### ブランチ関連
 ブランチ一覧  
 \*のマークが付いているブランチが現在自分がいるブランチ  
 `git branch -a`    
@@ -88,12 +92,12 @@ testブランチへの切り替え
 
 
 
-### ローカルのリポジトリに変更を更新する
+#### ローカルのリポジトリに変更を更新する
 `git add <file_name>`  
 `git commit -m "<message>"`  
 
 
-### リモート(つまりGitHub)にローカルの最新状況を更新する
+#### リモート(つまりGitHub)にローカルの最新状況を更新する
 リモートの設定  
 `git remote add origin git@github.com:<name>/<repository>.git`  
 リモートの確認  
