@@ -74,7 +74,17 @@ developブランチにさっきまで作業してた自分のブランチをマ�
 `git branch -d <name_Nset>`  
 リモートのブランチも削除（**自分以外のは勝手に消さないでね！**  ）
 `git push origin :<name_Nset>`
-  
+<br>
+
+##### ちなみにちなみに
+他の人のディレクトリとか手元に置きたくない人   
+`git config core.sparsecheckout true`  
+`echo "<my_dicetory_name>" > .git/info/sparse-checkout`  
+`git read-tree -m -u HEAD`  
+と設定すると、設定したディレクトリのみが作業ディレクトリに存在するようになります  
+（実際にはリポジトリには存在するけど、ワーキングツリーから消えるだけです）  
+この状態でマージとかプッシュとかプルとかもちゃんとでます（はずです）    
+
   
 ### その他使いそうなコマンド一覧
 #### ブランチ関連
