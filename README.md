@@ -15,7 +15,7 @@ gitって何？？？？ -> [Git使い方講座][]
 課題に必要なデータはコミットしなくてよいです.  
 基本的に各人自分のブランチを作って作業をして,各章の課題をコミットし終えたらdevelopブランチにマージしてください.勉強会の直前にTAがmasterにマージします.  
 
-具体例：  
+具体例：作業する人がryosukeとhogeの場合  
 ![my_git_flow](https://github.com/tmu-nlp/100knock2015/blob/master/img/my_git_flow.png)
 
 ##他のリポジトリで管理している人
