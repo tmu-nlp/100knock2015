@@ -83,12 +83,12 @@ developブランチにさっきまで作業してた自分のブランチをマ�
 `git branch -a`    
 追跡ブランチの表示  
 `git branch -vv`  
-testブランチの作成  
-`git branch test`  
-testブランチへの切り替え   
-`git checkout test`  
-現在のブランチへtestブランチをマージ  
-`git merge --no-ff test`  
+ブランチの作成  
+`git branch <branch_name>`  
+ブランチへの切り替え   
+`git checkout <branch_name>`  
+現在のブランチへ`<branch_name>`をマージ  
+`git merge --no-ff <branch_name>`  
 
 
 
@@ -109,5 +109,6 @@ testブランチへの切り替え
 追跡ブランチの設定が終わってる場合のpush  
 `git push`  
 もしなにかエラーがあったりしたら（エラーの文は一応読んでね）、恐らくリモートの方がローカルよりも最新だよってエラーだと思うので  
-`git pull`  
+`git fetch`  
+`git merge origin/<branch_name>`  
 これでリモートの最新状況をローカルに更新する、そしたらもう一度push  
