@@ -6,16 +6,16 @@ def n_gram(token_list, n):
 
 
 def word_n_gram(sentence, n):
-    print n_gram(sentence.split(), n)
+    return n_gram(sentence.split(), n)
 
 
 def char_n_gram(sentence, n):
-    print n_gram(list(sentence.replace(" ", "")), n)
+    return n_gram(list(sentence.replace(" ", "")), n)
 
 
 def main():
-    word_n_gram("I am an NLPer", 2)
-    char_n_gram("I am an NLPer", 2)
+    print word_n_gram("I am an NLPer", 2)
+    print char_n_gram("I am an NLPer", 2)
 
 
 if __name__ == '__main__':
