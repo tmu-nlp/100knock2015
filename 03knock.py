@@ -3,12 +3,12 @@
 
 #円周率
 
-a ="a, b, c, d, e"
-a.replace(",", "")
-print a
+#a ="a, b, c, d, e"
+#a.replace(",", "")
+#print a
 
 original = "Now I need a drink, alcoholic of course, after the heavy lectures involiving quantum mechanics."
-print original
+#print original
 
 #original_kai = original.strip(",").strip(".")
 #print original_kai
@@ -24,8 +24,10 @@ original = original.replace(".","")
 original = original.replace(",","")
 
 my_list = original.split(" ")
-print my_list
+#print my_list
 
 p_list = [len(my_list[index]) for index in range(len(my_list))]
 
 print p_list
+
+
