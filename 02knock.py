@@ -5,21 +5,22 @@
 
 pato = u"パトカー"
 taku = u"タクシー"
-print pato, taku
+
+#print pato, taku
 
 p_list = list(pato)
 t_list = list(taku)
-print p_list, t_list
+
+#print p_list, t_list
 
 patotaku = []
 
 for index in range(len(p_list)):
     patotaku.append(p_list[index] + t_list[index])  
-
-#for index in range(len(patotaku)):
-#     patotaku[index] = str(patotaku[index])
+    print repr(patotaku).decode("unicode-escape")
+#    patotaku[index] = str(patotaku[index+1])
+    patotaku[index] = patotaku[index].encode("utf-8") #これはできるよ
 #なぜかできない
-
 
 patotaku = "".join(patotaku)
 print patotaku
