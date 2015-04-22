@@ -5,5 +5,5 @@
 
 original = u"パタトクカシー"
 
-pato = original[0:len(original):2]
-print pato
+print original[::2]
+print original[1::2]
