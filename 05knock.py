@@ -1,10 +1,9 @@
 #!/usr/bin/python
 # _*_ coding: utf-8 _*_
-
 def n_gram(sentence, n):
 
     e_w_list = sentence.split(" ")
-    
+
     word_n_gram = []
 
     for index in range(len(e_w_list)-n+1):
@@ -12,12 +11,8 @@ def n_gram(sentence, n):
 	for i in range(index, index+n):
             my_list.append(e_w_list[i])
         word_n_gram.append(tuple(my_list))
-
     print word_n_gram
 
-#    sentence_a = sentence.strip(" ")
-#    print sentence_a
-#    文字列中のスペースが削除されない
 
     char_n_gram = []
 
@@ -30,7 +25,5 @@ def n_gram(sentence, n):
         for i in range(index, index+n):
             my_list.append(e_c_list[i])
         char_n_gram.append(tuple(my_list))
-
     print char_n_gram
-
-n_gram("I am an NLPer", 2)
+n_gram("I am an NLPer", 3)
