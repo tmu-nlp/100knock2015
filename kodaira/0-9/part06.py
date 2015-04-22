@@ -34,7 +34,6 @@ if __name__ == "__main__":
 #  print makeUnion(X, Y)
 #  print makeIntersection(X, Y)
 
-#関数を作れとは書いてなかった
   print X
   X = set(X)
   Y = set(Y)
