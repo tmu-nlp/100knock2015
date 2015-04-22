@@ -1,0 +1,18 @@
+//knock_00.cpp
+#include <string>
+#include <iostream>
+using namespace std;
+
+class str_reverse
+{
+    private:
+        string input_str;
+}
+
+int main()
+{
+    string test_str("stressed");
+    for (int i = test_str.size() -1 ; i >= 0; i--)
+        cout << test_str[i];
+    cout << endl;
+}
