@@ -15,9 +15,10 @@ for w in word_list:
     if len(w) <= 4:
         new_word_list.append(w)
     else:
-        l = []
-        for c in w:
-            l.append(c)
+#        l = []
+#        for c in w:
+#            l.append(c)
+        l = list(w)
 
         new_w = w[0]
         for i in range(len(l[1:-1])):

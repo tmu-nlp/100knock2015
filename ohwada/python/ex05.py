@@ -9,8 +9,6 @@ def ngram(sequence, n):
     ngram_list = []
    
     for i in range(len(sequence)-(n-1)):
-#        ngram_list.append(sequence[i:i+n])
-#        ngram_list.append(tuple(sequence[i:i+n]))
         if isinstance(sequence, list) is True:
             ngram_list.append(tuple(sequence[i:i+n]))
         else:

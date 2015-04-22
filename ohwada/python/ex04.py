@@ -20,3 +20,5 @@ for w in word_list:
 for c, i in d.items():
     print c, i
 
+
+

@@ -17,3 +17,5 @@ for w in word_list:
 
 print l    
 
+# or
+print map(lambda x:len(x.replace(",", "").replace(".", "")), sentence.split(" "))
