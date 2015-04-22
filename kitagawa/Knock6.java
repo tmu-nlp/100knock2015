@@ -23,7 +23,6 @@ public class Knock6 {
 		List <String>char_bigram_list1= new ArrayList<String>();
 		List <String>char_bigram_list2= new ArrayList<String>();
 		Set<String> setsum = new HashSet<String>();
-		Set<String> setdif = new HashSet<String>();
 		Set<String> setmul = new HashSet<String>();
 		
 		//文字ngramの獲得と和集合の獲得
@@ -43,6 +42,8 @@ public class Knock6 {
 			}
 		}
 		//差集合
+		Set<String> setdif = new HashSet<String>(setsum);
+        setdif.removeAll(setmul);
 		
           
 		System.out.println("和集合");	
