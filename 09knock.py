@@ -13,7 +13,7 @@ def randommm(sentence):
     for word in words_list:    # wordに入るのは文字列
         if len(word) > 4:     #各文字列の長さが4より大きい時
            suraisu = list(word[1:len(word)-1])  #頭文字と単語末を除いたリスト
-           word = list(word) 
+           word = list(word)                    #文字列のままだと代入できないのでリスト化 
            for i in range(1, len(word)-1):
                word[i] = suraisu.pop(random.choice(range(len(suraisu))))
         words_list[index] = "".join(word)
