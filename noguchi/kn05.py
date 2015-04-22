@@ -5,19 +5,20 @@ import string
 import sys
 
 def word_n_gram(n, x):
-  x_ws = x.split(" ")
+  x = x.split(" ")
   n_gram = []
-  for i in range(len(x_ws) - n + 1):
+  for i in range(len(x) - n + 1):
     m = ""
     for k in range(n):
       if k != n - 1:
-        m += x_ws[i + k] + " "
+        m += x[i + k] + " "
       else:
-        m += x_ws[i + k]
+        m += x[i + k]
     n_gram.append(m)
   return n_gram
 
 def char_n_gram(n, x):
+  
   n_gram = []
   for i in range(len(x) - n + 1):
     m = ""
