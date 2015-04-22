@@ -21,8 +21,6 @@ def makeNgram(words, n):
     print '１以下の入力'
     return words;
   WordList = list()
-  words.insert(0, "<s>")
-  words.append("</s>")
   for i in range(0, len(words) - n + 1):
     word = ""
     word += '('
