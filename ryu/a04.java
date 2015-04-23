@@ -10,14 +10,14 @@ public class a04 {
         HashMap<Integer, String> chemical_symbol_map = new HashMap<Integer, String>();
         
         for (int n = 0; n < words.length; n = n + 1) {
-        	if (number_list.contains(n + 1) ) {
+        	if (number_list.contains(n + 1)) {
 //        		System.out.print(words[n].substring(0, 1));
-        		chemical_symbol_map.put(n + 1, words[n].substring(0, 1));
+        		chemical_symbol_map.put(n, words[n].substring(0, 1));
             } else {
 //                System.out.print(words[n].substring(0, 2));
-                chemical_symbol_map.put(n + 1, words[n].substring(0, 2));
+                chemical_symbol_map.put(n, words[n].substring(0, 2));
             }
-        	System.out.println(chemical_symbol_map.get(n + 1));
+        	System.out.println(chemical_symbol_map.get(n));
     	}
     }
 }

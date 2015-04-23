@@ -1,6 +1,6 @@
 public class a01 {
 	public static void main(String[] args){
-        String s = new String("パタトクカシーー");
+        String s = new String("繝代ち繝医け繧ｫ繧ｷ繝ｼ繝ｼ");
 
         for (int n = 1; n < 8; n = n + 2) {
         System.out.print(s.substring(n - 1, n));
