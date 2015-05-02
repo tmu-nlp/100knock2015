@@ -8,26 +8,29 @@ import sys
 n = int(sys.argv[1]) #コマンドライン引数を受け取る
 yomikomi = open(sys.argv[2],"r")
 
-words = []
+line_list = []       
 
 for line in yomikomi:
-    words.append(line)
+   line_list.append(line.strip())  #それぞれの行を要素にして、格納、なので長さは行数
 
-kakikomi = []
+yomikomi.close()
 
-for number in range(len(words)/n):
-    kakikomi.append(open("my_file%d.txt" % (number) , "w"))
+kakikomi = []                      #ファイルパスが各要素
+
+for number in range(n):
+    kakikomi.append(open("my_file%d.txt" % (number) , "w"))    #入力した整数個だけパス作ります
 
 index = 0
+count = 0
 
-for line in yomikomi:
-    count = 0   
-    kakikomi[index].write(line)
+yomikomi = open(sys.argv[2], "r")
+
+for line in line_list:
+#    print line
+#    print kakikomi[index]   
+    kakikomi[index].write("%s\n" % (line))
     count += 1
-    if count == n:
+    if count >= float (len(line_list)) /n:
        index +=1
-
-
-
-
+       count = 0 
 
