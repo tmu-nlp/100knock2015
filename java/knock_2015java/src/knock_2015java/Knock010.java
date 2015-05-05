@@ -14,14 +14,11 @@ import java.io.LineNumberReader;
  *
  */
 public class Knock010 extends Knock {
-	
-	File hightemp;
 	LineNumberReader lnr;
 	/**
 	 * 
 	 */
 	public Knock010() {
-		hightemp = new File("../../Data/hightemp.txt");
 		try {
 			lnr = new LineNumberReader(new FileReader(hightemp));
 		} catch (FileNotFoundException e) {
