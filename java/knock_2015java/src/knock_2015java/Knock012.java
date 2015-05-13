@@ -3,17 +3,24 @@
  */
 package knock_2015java;
 
+import java.io.File;
+
 /**
  * @author ryosuke
  *
  */
 public class Knock012 extends Knock {
-
+	public File inFile;
+	public File outFile1;
+	public File outFile2;
+	
 	/**
 	 * 
 	 */
 	public Knock012() {
-		// TODO 自動生成されたコンストラクター・スタブ
+		inFile = hightemp;
+		outFile1 = col1;
+		outFile2 = col2;
 	}
 
 	/* (非 Javadoc)
@@ -21,8 +28,12 @@ public class Knock012 extends Knock {
 	 */
 	@Override
 	public void start() {
-		// TODO 自動生成されたメソッド・スタブ
-
+		for(String line : readFile(hightemp)){
+			String[] spl = line.split("\t");
+			printFile(outFile1, spl[0]+"\n", true);
+			printFile(outFile2, spl[1]+"\n", true);
+		}
+		System.out.println("fin");
 	}
 
 }
