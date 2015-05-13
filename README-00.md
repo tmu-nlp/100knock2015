@@ -10,7 +10,7 @@
 1. 作業するディレクトリに移動する  
 もし`/Users/ryosuke/work/100Knock2015/`で作業したければ, `/Users/ryosuke/work`に移動する  
 1. まずはこのリポジトリをクローン  
-`git clone git@github.com:tmu-nlp/100knock2015.git`  
+`git clone https://github.com/tmu-nlp/100knock2015.git`  
 これで今いるディレクトリに`100Knock2015`というディレクトリができる, そこがローカルのリポジトリ  
 1. 今クローンしたディレクトリに移動  
 `cd 100Knock2015`  
