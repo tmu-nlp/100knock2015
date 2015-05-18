@@ -110,7 +110,7 @@ developブランチにさっきまで作業してた自分のブランチをマ�
 
 #### リモート(つまりGitHub)にローカルの最新状況を更新する
 リモートの設定  
-`git remote add origin git@github.com:<name>/<repository>.git`  
+`git remote add origin https://github.com/<name>/<repository>.git`  
 リモートの確認  
 origin が表示されてればおｋ,されてなければ上のリモートの設定をする
 `git remote`  
