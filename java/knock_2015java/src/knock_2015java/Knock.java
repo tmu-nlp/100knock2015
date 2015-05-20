@@ -15,6 +15,8 @@ public abstract class Knock {
 	public File col1 = new File("../../Data/col1_java.txt");
 	public File col2 = new File("../../Data/col2_java.txt");
 	public File k13 = new File("../../Data/result_knock13_java.txt");
+	public File jawiki = new File("../../Data/jawiki-country.json");
+	
 	public abstract void start();
 
 	public void printFin(){
