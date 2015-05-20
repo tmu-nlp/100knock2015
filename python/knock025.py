@@ -18,7 +18,6 @@ for line in open(sys.argv[1]):
         flag = True
         continue
     if re_end_info.match(line) is not None:
-        flag = False
         break 
     if flag:
         result = re_template.search(line)
