@@ -13,14 +13,17 @@ if __name__ == "__main__":
     pattern1 = re.compile("(\|)(.+)(\=)(.+)")
     pattern2 = re.compile("(\'\'+)")
     for line1 in f:
-        line2 = pattern2.sub("", line1)
-        judge = pattern1.search(line2)
-        if judge:
-            
-            my_dict[judge.group(2)] = judge.group(4)
-            w.write(judge.group(2))
-            w.write(judge.group(4))
-            w.write("\n")
+        if(line1 != "}}\n"):
+            line2 = pattern2.sub("", line1)
+            judge = pattern1.search(line2)
+
+            if judge:
+                my_dict[judge.group(2)] = judge.group(4)
+                w.write(judge.group(2))
+                w.write(judge.group(4))
+                w.write("\n")
+        else:
+            break
 
     f.close()
     w.close()
