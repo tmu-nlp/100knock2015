@@ -18,5 +18,5 @@ if __name__ == "__main__":
     set.add(words[0])
   
   # print
-  for word in set:
+  for word in sorted(set):
     print word
