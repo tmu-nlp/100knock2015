@@ -11,7 +11,7 @@ re_end_info = re.compile('\}\}')
 re_template = re.compile('\|(.+?) = (.+)')
 re_ref = re.compile('(.*)(<ref>.*|<ref .*)')
 re_impact = re.compile('\'\'+')
-re_link = re.compile('\[\[(([^\|\]]*?\|)|([^\|\]]*?))([^\|\]]*?)\]\]')
+re_link = re.compile('\[\[(([^\|\]]*?\|)|([^\|\]]*?))(?P<name>[^\|\]]*?)\]\]')
 
 
 info = dict()
@@ -33,7 +33,7 @@ for line in open(sys.argv[1]):
             else:
                 value = result.group(2)
             value = re_impact.sub('', value)
-            value = re_link.sub(lambda mo: mo.group(4), value)
+            value = re_link.sub(lambda mo: mo.group('name'), value)
             info[key] = value 
 
 for key, value in sorted(info.items()):
