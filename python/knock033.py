@@ -1,6 +1,6 @@
 # coding:utf-8
 '''
-python knock032.py ../Data/neko.txt.mecab
+python knock033.py ../Data/neko.txt.mecab
 '''
 
 import sys
