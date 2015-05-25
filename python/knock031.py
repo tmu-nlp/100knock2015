@@ -1,12 +1,12 @@
-#coding:utf-8
+# coding:utf-8
 '''
-python knock031.py ../Data/knock030/result.pkl
+python knock031.py ../Data/neko.txt.mecab
 '''
 
 import sys
-import pickle
+import knock030 as marujirou
 
-doc = pickle.load(open(sys.argv[1]))
+doc = marujirou.get_morphs(sys.argv[1])
 
 for sent in doc:
     for m in sent:
