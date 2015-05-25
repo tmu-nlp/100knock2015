@@ -39,7 +39,9 @@ def get_morphs(mecab_out):
         else:
             print "not match: ", line,
     return doc
-
+# --------------------------
+#      split version
+# --------------------------
 #    for line in open(mecab_out):
 #        spl_tmp = line.strip().split('\t')
 #        # EOSがきたら一文の終わり
@@ -60,6 +62,7 @@ def get_morphs(mecab_out):
 #        morph['pos1'] = spl[7]
 #
 #        sent.append(morph)
+#    return doc
 
 
 def main():
