@@ -13,28 +13,37 @@ class Chunk:
             self.srcs = [-1]
 
 
-def main():
-    fin = open("/Users/moguranosenshi/WorkSpace/100knock2015/kajiwara/data/neko.txt.cabocha", "r")
+def renew_phrase(phrase, phrases):
+    if phrase:
+        phrases.append(phrase)
+        phrase = list()
+    return phrase, phrases
+
+
+def get_chunks_list(fname):
+    fin = open(fname, "r")
     phrase = list()
     phrases = list()
     relations = list()
     sentences = list()
     for line in fin:
         if line.startswith("* "):
-            if phrase:
-                phrases.append(phrase)
-                phrase = list()
+            phrase, phrases = renew_phrase(phrase, phrases)
             relations.append(tuple([int(number.replace("D", "")) for number in line.strip().split(" ")[1:3]]))
         elif line == "EOS\n":
-            if phrase:
-                phrases.append(phrase)
-                phrase = list()
+            phrase, phrases = renew_phrase(phrase, phrases)
             sentences.append([Chunk(phrase_number, phrases, relations) for phrase_number in range(len(relations))])
             phrases = list()
             relations = list()
         else:
             phrase.append(line)
     fin.close()
+    return sentences
+
+
+def main():
+    fname = "/Users/moguranosenshi/WorkSpace/100knock2015/kajiwara/data/neko.txt.cabocha"
+    sentences = get_chunks_list(fname)
     for phrase_number, phrase in enumerate(sentences[7]):
         print str(phrase_number) + ": " + " ".join([morph.surface for morph in phrase.morphs]) + "\tdst:" + str(phrase.dst) + "\tsrc:" + ",".join([str(source) for source in phrase.srcs])
 
