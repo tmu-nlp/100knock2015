@@ -31,6 +31,16 @@ class Chunk():
     def hasVerb(self):
         return any(m.pos=='動詞' for m in self.morphs)
 
+    def hasCase(self):
+        return any(m.pos=='助詞' for m in self.morphs)
+
+    def get_first_verb(self):
+        for m in self.morphs:
+            if m.pos == '動詞':
+                return m
+
+    def get_case(self):
+        return filter(lambda m: m.pos=='助詞', self.morphs)[-1]
 
 class Morph():
     def __init__(self, surface, base, pos, pos1):
