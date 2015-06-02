@@ -40,10 +40,8 @@ def main(in_fname):
         sent.append(Morph(surface, base, pos, pos1))
 
     # output
-    for i, sent in enumerate(doc):
-        if i == 3:
-            for morph in sent:
-                print morph
+    for morph in doc[2]:
+        print morph
 
 if __name__ == '__main__':
     main(sys.argv[1])
