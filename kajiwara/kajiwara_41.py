@@ -1,7 +1,6 @@
 # coding:utf-8
 
 from kajiwara_40 import Morph
-from collections import defaultdict
 
 
 class Chunk:
