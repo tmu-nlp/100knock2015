@@ -13,7 +13,7 @@ def main(in_fname):
         for chunk in sent:
             if chunk.srcs and chunk.hasVerb():
                 pred = chunk.get_first_verb().base 
-                cases = [sent[src].get_case().base for src in chunk.srcs if sent[src].hasCase()]
+                cases = sorted([sent[src].get_case().base for src in chunk.srcs if sent[src].hasCase()])
                 if not cases:
                     continue
                 print '%s\t%s' % (pred, ' '.join(cases)) 
