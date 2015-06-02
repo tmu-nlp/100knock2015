@@ -22,8 +22,8 @@ class Chunk():
     def append_srcs(self, src):
         self.srcs.append(src)
     
-    def get_raw(self):
-        return ''.join(m.surface for m in self.morphs)
+    def get_raw(self, myfilter=lambda m: pass):
+        return ''.join(mm.surface for mm in filter(myfilter, (m for m in self.morphs)))
 
 
 class Morph():
