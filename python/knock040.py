@@ -23,8 +23,9 @@ def main(in_fname):
         if line.startswith('* '):
             continue
         if line.startswith('EOS'):
-            doc.append(sent)
-            sent = list()
+            if sent:
+                doc.append(sent)
+                sent = list()
             continue
         spl = line.split('\t')
         surface = spl[0]
