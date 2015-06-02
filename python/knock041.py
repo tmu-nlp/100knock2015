@@ -25,6 +25,12 @@ class Chunk():
     def get_raw(self, myfilter=lambda m: True):
         return ''.join(mm.surface for mm in filter(myfilter, (m for m in self.morphs)))
 
+    def hasNoun(self):
+        return any(m.pos=='名詞' for m in self.morphs)
+
+    def hasVerb(self):
+        return any(m.pos=='動詞' for m in self.morphs)
+
 
 class Morph():
     def __init__(self, surface, base, pos, pos1):
