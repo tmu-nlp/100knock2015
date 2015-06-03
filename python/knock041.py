@@ -7,9 +7,10 @@ import sys
 
 
 class Chunk():
-    def __init__(self, dst, morphs=None, srcs=None):
+    def __init__(self, dst, index, morphs=None, srcs=None):
         self.morphs = morphs
         self.dst = dst
+        self.index = index
         self.srcs = srcs
         if morphs is None:
             self.morphs = list()
@@ -24,9 +25,12 @@ class Chunk():
     
     def get_raw(self, myfilter=lambda m: True):
         return ''.join(mm.surface for mm in filter(myfilter, (m for m in self.morphs)))
+    
+    def replace_noun(self, rep):
+        return ''.join(m.surface if m.pos != '名詞' and m.pos != '代名詞' else rep for m in self.morphs)
 
     def hasNoun(self):
-        return any(m.pos=='名詞' for m in self.morphs)
+        return any(m.pos=='名詞' or m.pos=='代名詞' for m in self.morphs)
 
     def hasVerb(self):
         return any(m.pos=='動詞' for m in self.morphs)
@@ -81,7 +85,7 @@ def create_doc(in_fname):
     sent = list()
     for line in open(in_fname):
         if line.startswith('* '):
-            chunk = Chunk(int(line.split(' ')[2][:-1]))
+            chunk = Chunk(int(line.split(' ')[2][:-1]), int(line.split(' ')[1]))
             sent.append(chunk)
             continue
         if line.startswith('EOS'):
