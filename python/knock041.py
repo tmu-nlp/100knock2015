@@ -42,12 +42,35 @@ class Chunk():
     def get_case(self):
         return filter(lambda m: m.pos=='助詞', self.morphs)[-1]
 
+    def isSahenWoVerb(self):
+        for i, m in enumerate(self.morphs):
+            if m.pos == '名詞' and m.pos2 == 'サ変可能':
+                try:
+                    m1 = self.morphs[i+1]
+                    m2 = self.morphs[i+2]
+                    if m1.pos == '助詞' and m1.surface == 'を' and m2.pos == '動詞':
+                        return True 
+                except IndexError:
+                    continue
+
+    def get_sahen_wo_verb(self):
+        for i, m in enumerate(self.morphs):
+            if m.pos == '名詞' and m.pos2 == 'サ変可能':
+                try:
+                    m1 = self.morphs[i+1]
+                    m2 = self.morphs[i+2]
+                    if m1.pos == '助詞' and m1.surface == 'を' and m2.pos == '動詞':
+                        return '%s%s%s' % (m.surface, m1.surface, m2.base)
+                except IndexError:
+                    continue
+
 class Morph():
-    def __init__(self, surface, base, pos, pos1):
+    def __init__(self, surface, base, pos, pos1, pos2):
         self.surface = surface
         self.base = base
         self.pos = pos
         self.pos1 = pos1
+        self.pos2 = pos2
 
     def __str__(self):
         return '%s\t%s,%s,%s' % (self.surface, self.pos, self.pos1, self.base)
@@ -75,13 +98,14 @@ def create_doc(in_fname):
         spl = spl[1].split(',')
         pos = spl[0]
         pos1 = spl[1]
+        pos2 = spl[2]
         # unknown word
         if len(spl) == 6:
             base = "*"
         else:
             base = spl[10]
         # update morphs
-        chunk.append_morph(Morph(surface, base, pos, pos1))
+        chunk.append_morph(Morph(surface, base, pos, pos1, pos2))
     return doc
 
 
