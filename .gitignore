@@ -1,6 +1,6 @@
 *.pyc
 Data/*
-stanford
+stanford*
 
 java/.metadata/
 java/RemoteSystemsTempFiles/
