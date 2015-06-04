@@ -1,6 +1,6 @@
 # coding:utf-8
 '''
-python knock047.py ../Data/neko.txt.cabocha
+python knock048.py ../Data/neko.txt.cabocha
 '''
 
 import sys
