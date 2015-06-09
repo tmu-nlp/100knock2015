@@ -9,7 +9,7 @@ import xml.sax as sax
 
 class StanfordCoreXMLHandler(sax.handler.ContentHandler):
     def __init__(self):
-        self.tags = ['root']
+        self.tags = []
         self.outputs = list()
 
     def startElement(self, name, attrs):
