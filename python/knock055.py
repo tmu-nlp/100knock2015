@@ -1,6 +1,6 @@
 # coding:utf-8
 '''
-python knock054.py ../Data/nlp.txt.xml
+python knock055.py ../Data/nlp.txt.xml
 '''
 
 import sys
