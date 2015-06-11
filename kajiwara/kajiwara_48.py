@@ -55,9 +55,11 @@ def main():
         for phrase_number in range(len(sentences[sentence_number])):
             if not sentences[sentence_number][phrase_number].is_nominal_phrase():
                 continue
-            outputs = ["".join([morph.surface for morph in sentences[sentence_number][phrase_number].morphs])]
-            while not sentences[sentence_number][phrase_number].dst == -1:
-                outputs.append("".join([morph.surface for morph in sentences[sentence_number][sentences[sentence_number][phrase_number].dst].morphs]))
+            outputs = list()
+            while True:
+                outputs.append("".join([morph.surface for morph in sentences[sentence_number][phrase_number].morphs]))
+                if sentences[sentence_number][phrase_number].dst == -1:
+                    break
                 phrase_number = sentences[sentence_number][phrase_number].dst
             print " -> ".join(outputs)
 
