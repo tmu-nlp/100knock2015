@@ -1,0 +1,6 @@
+~/mongodb/bin/mongoimport -d 100knock -c 064 --file Data/artist.json
+# mongo shell
+db["064"].ensureIndex({name:1})
+db["064"].ensureIndex({"aliases.name":1})
+db["064"].ensureIndex({"tags.value":1})
+db["064"].ensureIndex({"rating.value":1})
