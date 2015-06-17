@@ -12,9 +12,9 @@ db = connect['100knock']
 collect = db['064']
 
 for line in iter(sys.stdin.readline, '\n'):
-    datas = collect.find({"aliases.name": line.strip()})
-    if datas:
-        for data in datas:
-            print data
+    data = collect.find({"aliases.name": line.strip()})
+    if data:
+        for doc in data:
+            print doc
     else:
         print "None"
