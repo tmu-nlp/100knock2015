@@ -12,7 +12,8 @@ def main():
 
     for one_sentence in all_sentences:
         for morphdict in one_sentence:
-            if morphdict["pos1"] == "サ変可能":
+          if morphdict["pos"] == "名詞" and \
+                morphdict["pos1"] == "サ変可能":
                print morphdict["surface"]
 
 
