@@ -17,6 +17,42 @@ class Chunk:
         self.dst    = dst
         self.srcs   = srcs
 
+    def get_phrase(self):
+        phrase = ""
+        for morph in self.morphs:
+            phrase += morph.surface
+        return phrase
+
+    def check_base(self, base):
+        for morph in self.morphs:
+            if morph.base == base:
+               return True
+        return False
+
+    def check_pos(self, pos):
+        for morph in self.morphs:
+            if morph.pos == pos:
+               return True
+        return False
+    
+    def check_pos1(self, pos1):
+        for morph in self.morphs:
+            if morph.pos1 == pos1:
+               return True
+        return False
+
+    def get_base_havingpos(self, pos):
+        for morph in self.morphs:
+            if morph.pos == pos:
+               return morph.base
+        return None
+      
+    def get_base_havingpos1(self, pos1):
+        for morph in self.morphs:
+            if morph.pos1 == pos1:
+               return morph.base
+        return None
+
 def make_chunks(cabocha_file):
 
     srcs_dict = defaultdict(list) # キーは係り先、バリューは係り元のリスト
