@@ -23,7 +23,8 @@ def main():
                       particles.append(chunks[departure].get_base_havingpos("助詞"))
                       phrases.append(chunks[departure].get_phrase())
                if particles and phrases:
-                  print chunk.get_phrase()+chunks[chunk.dst].get_base_havingpos("動詞")\
+                  print chunk.get_phrase()\
+                        +chunks[chunk.dst].get_base_havingpos("動詞")\
                         + "\t"+" ".join(particles)\
                         + "\t" + " ".join(phrases)
                   particles = list()
