@@ -1,1 +1,1 @@
-classias-train -m model073.txt features.txt
+classias-train -tb -m model073.txt features.txt
