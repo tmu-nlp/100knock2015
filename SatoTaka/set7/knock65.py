@@ -10,8 +10,8 @@ def main():
     db     = client.test
     col    = db.artist
 
-    print col.find({"name": "Queen"}).count()
-    
+    for document in  col.find({"name": "Queen"}):
+        print document
 
 if __name__ == "__main__":
    main()
