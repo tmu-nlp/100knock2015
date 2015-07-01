@@ -28,8 +28,8 @@ def main():
            print "+1 "+ line.strip(),
         else:
            print "-1 "+ line.strip(),
-        exponent = math.exp(-score + int(bias))
-        probablity = 1/exponent
+        exponent = math.exp(-(-score + int(bias)))
+        probablity = 1/(1+exponent)
         print probablity
         exponent   = float()
         probablity = float() 
