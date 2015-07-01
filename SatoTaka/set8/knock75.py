@@ -4,7 +4,7 @@
 from collections import defaultdict 
 
 def main():
-    model_file  = open("model73_file.txt")
+    model_file  = open("model_73.txt")
     word_weight = defaultdict(int)
     for line in model_file:
         if not line.startswith("@"): 
