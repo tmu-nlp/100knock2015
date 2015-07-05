@@ -28,7 +28,7 @@ def main():
 #           print "+1 "+ line.strip(),
 #        else:
 #           print "-1 "+ line.strip(),
-        exponent = math.exp(-(score + int(bias)))
+        exponent = math.exp(-(score -0.2455))
         probablity = 1/(1+exponent)
 #        print probablity
         if probablity >= 0.5:
