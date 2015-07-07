@@ -1,0 +1,2 @@
+# mongo shell
+db["064"].find({"aliases.name": "Frank De Jo Jo"})
