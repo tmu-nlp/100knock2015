@@ -34,24 +34,38 @@ def predict(prob, thresh):
     return '-1' if prob < thresh else '+1'
 
 def calc_pre_rec(tp, fp, tn, fn):
-    return (tp/(tp+fp)), (tp/(tp+fn))
+    pre = tp/(tp+fp) if tp+fp != 0 else 0
+    rec = tp/(tp+fn) if tp+fn != 0 else 0
+    return pre, rec
 
 model = dict()
 read_model(model)
-x = list()
-y = list()
-for thresh in (i/100 for i in range(0, 100, 1)):
+probs = list()
+golds = list()
+pres = list()
+recs = list()
+
+# create prob list
+count = .0
+all_count = len(open(sys.argv[2]).readlines())
+for line in open(sys.argv[2]):
+    spl = line.strip().split() 
+    gold = spl[0]
+    feat = extract_features(spl[1:])
+    prob = probability(feat)
+    probs.append(prob)
+    golds.append(gold)
+    count += 1
+    print '\r %d%%' % (100*count/all_count),
+
+split_num = 20
+for thresh in (1.0*i/split_num for i in range(0, split_num, 1)):
     tp = .0
     fp = .0
     tn = .0
     fn = .0
-    for line in open(sys.argv[2]):
-        spl = line.strip().split() 
-        gold = spl[0]
-        feat = extract_features(spl[1:])
-        prob = probability(feat)
+    for prob, gold in zip(probs, golds):
         pred = predict(prob, thresh)
-
         if gold != pred and pred == '+1':
             fp += 1
         elif gold != pred:
@@ -59,14 +73,17 @@ for thresh in (i/100 for i in range(0, 100, 1)):
         elif gold == pred and pred == '+1':
             tp += 1
         elif gold == pred:
-            tp += 1
+            tn += 1
         else:
             print "error"
             exit()
         
     pre, rec = calc_pre_rec(tp, fp, tn, fn)
-    x.append(pre)
-    y.append(rec)
+    pres.append(pre)
+    recs.append(rec)
 
-plt.plot(x, y, 'o')
+plt.plot(recs, pres, 'o')
+plt.axis([0,1,0,1])
+plt.xlabel('recall')
+plt.ylabel('precision')
 plt.show()
