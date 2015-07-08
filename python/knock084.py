@@ -13,7 +13,7 @@ Vt = len(uni.keys())
 Vc = len(con.keys())
 X = sp.lil_matrix((Vt, Vc))
 for i, tok in enumerate(uni.keys()):
-    for j, co in enumerate(co.keys()):
+    for j, co in enumerate(con.keys()):
         if co_occ.get('%s %s' % (tok, co), 0) >= 10:
             # ppmi
             X[i, j] = max(0, math.log((1.0*N*co_occ['%s %s' % (tok, co)])/(uni[tok]*con[co]), 2))
