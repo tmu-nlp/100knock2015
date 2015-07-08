@@ -1,6 +1,6 @@
 # coding:utf-8
 """
-python knock084.py ../Data/result/knock083/result.pkl ../Data/result/knock084/python/X.pkl
+python knock084.py ../Data/result/knock083/python/result.pkl ../Data/result/knock084/python/X.pkl
 """
 
 import sys
