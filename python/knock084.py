@@ -1,16 +1,17 @@
 # coding:utf-8
 """
-python knock084.py ../Data/result/knock083/result.pkl ../Data/result/knock084/X.pkl
+python knock084.py ../Data/result/knock083/result.pkl ../Data/result/knock084/python/X.pkl
 """
 
+import sys
 import pickle
-import scipy
+import scipy.sparse as sp
 import math
 
 uni, con, co_occ, N = pickle.load(open(sys.argv[1]))
 Vt = len(uni.keys())
 Vc = len(con.keys())
-X = scipy.sparse.lil_matrix((Vt, Vc))
+X = sp.lil_matrix((Vt, Vc))
 for i, tok in enumerate(uni.keys()):
     for j, co in enumerate(co.keys()):
         if co_occ.get('%s %s' % (tok, co), 0) >= 10:
