@@ -1,6 +1,6 @@
 # coding:utf-8
 """
-python knock081.py ../Data/result/knock080/clean.txt ../Data/country_name_list.txt
+python knock081.py ../Data/result/knock080/python/clean.txt ../Data/country_name_list.txt
 """
 
 import sys
