@@ -1,6 +1,6 @@
 # coding:utf-8
 """
-python knock084.py ../Data/result/knock083/python/result.pkl ../Data/result/knock084/python/X.pkl
+python knock084.py ../Data/result/knock083/python/result.pkl ../Data/result/knock084/python/X.pkl ../Data/result/knock084/python/word2id.pkl
 """
 
 import sys
@@ -30,4 +30,5 @@ for i, tok in enumerate(must + uni.keys()):
 
 print X
 pickle.dump(X, open(sys.argv[2], 'w'))
+pickle.dump(word2id, open(sys.argv[3], 'w'))
 
