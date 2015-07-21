@@ -11,6 +11,6 @@ import sklearn.decomposition
 dim = 300
 X = pickle.load(open(sys.argv[1]))
 pca = sklearn.decomposition.PCA(dim)
-Xpca = pca.fit_transform(X)
+Xpca = pca.fit_transform(X.toarray())
 print Xpca
 pickle.dump(Xpca, open(sys.argv[2], 'w'))
