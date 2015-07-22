@@ -27,10 +27,11 @@ def main():
  #              print pickle_file_t_and_c[word][context]
                PPMI[word][context] = max(math.log(3048773*pickle_file_t_and_c[word][context]/ \
                                                   float((pickle_file_t[word]*pickle_file_c[context]))), 0) # 3048773はknock082のcount_N
-               t_set.add(word)
-               c_set.add(context)
-            else:
-               PPMI[word][context] = 0
+               if PPMI[word][context] != 0:
+                  t_set.add(word)
+                  c_set.add(context)
+#            else:
+#               PPMI[word][context] = 0
     flag = 0
     for word in t_set:
         if flag == 0: # 最初の一回のみ
