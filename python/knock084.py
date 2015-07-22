@@ -16,7 +16,7 @@ Vc = 10000
 X = sp.lil_matrix((Vt, Vc))
 word2id = dict()
 
-must = ["United_States", "U.S", "England", "Spain", "Madrid", "Athens"]
+must = ["United_States", "U.S", "England", "Spain", "Madrid", "Athens", "Greece"]
 for i, tok in enumerate(must + uni.keys()):
     word2id[tok] = i
     if i == Vt:
