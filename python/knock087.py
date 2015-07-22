@@ -9,7 +9,7 @@ import numpy
 
 
 def cossim(x,y):
-    return numpy.sum(x*y) / (numpy.sqrt(numpy.sum(x*x) * numpy.sqrt(numpy.sum(y*y))))
+    return numpy.sum(x*y) / (numpy.sqrt(numpy.sum(x*x)) * numpy.sqrt(numpy.sum(y*y)))
 
 Xpca = pickle.load(open(sys.argv[1]))
 word2id = pickle.load(open(sys.argv[2]))
