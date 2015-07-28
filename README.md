@@ -6,7 +6,9 @@ http://cl.sd.tmu.ac.jp/groups/programming-drill
 言語は1回目の人は Python,2回目の人は Python 以外を用います.  
 参加者は全員毎回課題を解いて,このリポジトリにプッシュしておいてください.  
 gitって何？？？？ -> [Git使い方講座][]  
+このリポジトリへの参加 -> [README-00.md][]  
 
+[README-00.md]: https://github.com/tmu-nlp/100knock2015/blob/master/README-00.md
 [言語処理100本ノック]: http://www.cl.ecei.tohoku.ac.jp/nlp100/
 [Git使い方講座]: http://ace12358.tumblr.com/post/116453885344/git-for
 
