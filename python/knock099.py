@@ -16,7 +16,8 @@ features = np.array(dic.values())
 embeded = TSNE().fit_transform(features)
 
 x, y = zip(*embeded)
-
-plt.plot(zip(*embeded), 'o')
+for (xx,yy),key in zip(embeded, dic.keys()):
+    plt.text(xx, yy, key)
+#plt.plot(zip(*embeded), 'o')
 plt.axis([min(x), max(x), min(y), max(y)])
 plt.show()
