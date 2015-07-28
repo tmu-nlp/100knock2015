@@ -11,4 +11,5 @@ should be fixed later
 * 047
 * 049
 * 056
+* 084 (if freq >= 10)
 
