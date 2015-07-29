@@ -4,9 +4,9 @@
 import sys
 
 
-with open("hightemp.txt", "r") as f:
+with open(sys.argv[1], "r") as f:
     lines = f.readlines()
-    N = int(sys.argv[1])
+    N = int(sys.argv[2])
 
     x1 = -(-len(lines) / N)
     x2 = len(lines) / N
@@ -23,7 +23,7 @@ with open("hightemp.txt", "r") as f:
 
     i = 1
     for linage in linage_lst:
-        with open("result_ex16/f{0}.txt".format(str(i).zfill(2)), "w") as f_sub:
+        with open("split{0}.txt".format(str(i).zfill(2)), "w") as f_sub:
             sub_lines = lines[:linage]
             text = "".join(sub_lines)
             f_sub.write(text)
