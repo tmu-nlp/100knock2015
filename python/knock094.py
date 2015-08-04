@@ -12,6 +12,6 @@ for line in open(sys.argv[1]):
     words = line.strip().split(',')
     if not model.__contains__(words[0]) or not model.__contains__(words[1]):
         continue
-    sim = model.n_similarity(words[0], words[1])
+    sim = model.similarity(words[0], words[1])
     print line.strip()+','+str(sim)
 

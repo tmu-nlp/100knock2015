@@ -6,7 +6,6 @@ python knock098.py ../Data/result/knock096/python/country.pkl
 import sys
 import pickle
 import numpy as np
-import itertools
 from scipy.cluster.hierarchy import linkage, dendrogram
 from scipy.spatial.distance import pdist
 import matplotlib.pyplot as plt

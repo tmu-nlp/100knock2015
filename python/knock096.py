@@ -10,6 +10,7 @@ from gensim.models import word2vec
 dic = dict()
 model = word2vec.Word2Vec.load_word2vec_format(sys.argv[1], binary=True)
 for line in open(sys.argv[2]):
-    if model.__contains__(line.strip()):
-        dic[line.strip()] = model[line.strip()]
+    word = '_'.join(line.strip().split())
+    if model.__contains__(word):
+        dic[word] = model[word]
 pickle.dump(dic, open(sys.argv[3], 'w'))
