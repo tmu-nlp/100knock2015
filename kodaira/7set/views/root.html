@@ -1,0 +1,52 @@
+<h1>Search Artist : NLP100KNOCK PART69</h1>
+
+<form>
+  <table border="0">
+    <tr>
+      <td align="right">artist name</td>
+      <td><input type="text" name="name" size = 25></td>
+    </tr>
+    <tr>
+      <td align="right">aliases_name</td>
+      <td>
+        <input type="text" name="aliases_name" size=25>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">tags_value</td>
+      <td>
+        <input type="text" name="tags_value" size=25>
+      </td>
+    </tr>
+  </table>
+  <button on click="">search</button>
+</form>
+
+<h1>Search [
+% for tag, query in query.items():
+    {{tag}} : {{query}} &nbsp;
+% end
+]</h1>
+% count = 0
+% for info_dict in result:
+    % count += 1
+    <strong>---------Result{{count}}-------------</strong><br>
+    % for key, value in info_dict.items():
+        % if type(value) == list:
+            {{key}} : <br>
+            % for key2, value2 in value[0].items():
+                &nbsp;&nbsp; {{key2}} : {{value2}} <br>
+        % end
+        % elif type(value) == dict:
+            {{key}} : <br>
+            
+            % for key2, value2 in value.items():
+              &nbsp;&nbsp;  {{key2}} : {{value2}} <br>
+        % end
+        % else:
+             {{key}} : {{value}}<br>
+        % end
+        
+    % end
+    <br>
+% end
